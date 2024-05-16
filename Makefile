@@ -7,6 +7,7 @@ RM		= rm -f
 
 SRC =	src/main.c \
 		src/get_path.c \
+		src/daddy.c \
 
 OBJS = $(SRC:%.c=%.o)
 
