@@ -5,9 +5,10 @@ LIBFT_FLAGS = -L src/libft/ -lft
 CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 RM		= rm -f
 
-SRC =	src/main.c \
-		src/get_path.c \
-		src/daddy.c \
+SRC =	src/bonus/pipex.c \
+		src/bonus/get_path.c \
+		src/bonus/here_doc.c \
+		src/bonus/daddy.c \
 
 OBJS = $(SRC:%.c=%.o)
 

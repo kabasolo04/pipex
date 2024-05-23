@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:24:54 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/05/16 19:27:24 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:05:56 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/wait.h>
+# include <wait.h>
 
+int		here_doc(char **argv);
 char	*get_path(char *cmd, char **envp);
-void	daddy(int i, char **argv, char **envp, int fdin);
+void	exec(int fd_out, char *argv, char **envp);
+void	daddy(int argc, char **argv, char **envp);
 
 #endif //PIPEX_H
