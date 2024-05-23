@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 19:35:45 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/05/16 12:11:39 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/05/22 20:08:21 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 	{
 		rbytes = read(fd, buffer, BUFFER_SIZE);
 		if (rbytes == -1)
-			return (free(line), ft_bzero(buffer, ft_lfc(buffer, '\0')), NULL);
+			return (free(line), ft_bzero(buffer, BUFFER_SIZE + 1), NULL);
 		buffer[rbytes] = '\0';
 		line = ft_join(line, buffer);
 	}

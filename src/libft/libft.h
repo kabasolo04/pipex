@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:25:05 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/25 18:47:41 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/05/22 20:24:09 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-
-# define READ 0
-# define EDIT 1
-# define DEL  2
-# define FREE 3
-# define MEM  4
 
 typedef struct s_list
 {
@@ -88,5 +82,6 @@ void	mtrx_free(char **mtrx);
 void	*ft_realloc(void *ptr, size_t size);
 char	*get_next_line(int fd);
 void	free_list(t_list **lst);
+int		ft_dprintf(int fd, char const *s, ...);
 
 #endif //LIBFT.H
