@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:25:05 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/05/22 20:24:17 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/05/27 11:01:08 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int		ft_isspace(int c);
 long	ft_atol(const char *str);
 int		mtrx_len(char **mtrx);
 char	**mtrx_cpy(char **mtrx);
-void	mtrx_free(char **mtrx);
+void	free_split(char **mtrx);
 void	*ft_realloc(void *ptr, size_t size);
 char	*get_next_line(int fd);
 void	free_list(t_list **lst);

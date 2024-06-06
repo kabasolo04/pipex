@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:42:38 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/04/10 19:20:25 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/05/27 13:03:15 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	**mtrx_cpy(char **mtrx)
 		t = 0;
 		cpy[i] = (char *)malloc((ft_strlen(mtrx[i]) + 1) * sizeof(char ));
 		if (!cpy[i])
-			return (mtrx_free(cpy), NULL);
+			return (free_split(cpy), NULL);
 		while (mtrx[i][t])
 		{
 			cpy[i][t] = mtrx[i][t];
