@@ -56,7 +56,7 @@ SOURCES = \
 	ft_isspace.c \
 	mtrx_len.c \
 	mtrx_cpy.c \
-	mtrx_free.c \
+	free_split.c \
 	ft_realloc.c \
 	get_next_line.c \
 	free_list.c \

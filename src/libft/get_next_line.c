@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/11 19:35:45 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/05/22 20:08:21 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/06/06 13:49:25 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #define BUFFER_SIZE 42
 
-static int	ft_lfc(char *str, char c) // lfc -> Lenght For Char
+static int	ft_lfc(char *str, char c)
 {
 	int	i;
 	int	l;
