@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 15:11:35 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/06/06 12:33:06 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/06/13 12:06:38 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ static char	*get_env(char **envp)
 			return (&envp[i][5]);
 		i ++;
 	}
-	ft_dprintf(2, "Error: couldn't find the PATH in the environment.\n");
+	ft_dprintf(2, "Error: couldn't find the PATH from the envp.\n");
 	return (NULL);
 }
 
-static char	*get_command_path(char	**paths, char *command)
+static char	*search_command_path(char	**paths, char *command)
 {
 	int		i;
 	char	*path_part;
@@ -52,12 +52,11 @@ static char	*get_command_path(char	**paths, char *command)
 	return (NULL);
 }
 
-char	*get_path(char *cmd, char **envp)
+char	*get_path(char *command, char **envp)
 {
 	char	*command_path;
 	char	*env_path;
 	char	**paths;
-	char	**command;
 
 	env_path = get_env(envp);
 	if (!env_path)
@@ -65,11 +64,7 @@ char	*get_path(char *cmd, char **envp)
 	paths = ft_split(env_path, ':');
 	if (!paths)
 		return (NULL);
-	command = ft_split(cmd, ' ');
-	if (!command)
-		return (free_split(paths), NULL);
-	command_path = get_command_path(paths, command[0]);
+	command_path = search_command_path(paths, command);
 	free_split(paths);
-	free_split(command);
 	return (command_path);
 }

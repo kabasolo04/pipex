@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:21:07 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/06/06 14:55:59 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/07/31 17:25:22 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	get_files(char *n_in, char *n_out, t_pipex *data, int bool_hd)
 		ft_dprintf(2, "Error: infile\n");
 		exit(1);
 	}
-	data->outfile = open(n_out, O_CREAT | O_TRUNC | O_RDWR, 0644);
+	data->outfile = open(n_out, O_CREAT | O_APPEND | O_RDWR, 0644);
 	if (data->outfile == -1)
 	{
 		close(data->infile);
@@ -57,8 +57,8 @@ int	main(int argc, char **argv, char **envp)
 	close(data.infile);
 	daddy(data, 0);
 	i = 0;
-	while (++i < argc)
+	while (++i <= argc - (here_doc + 3))
 		wait(NULL);
-	close(data.fd[3]);
+	close(data.outfile);
 	return (0);
 }
