@@ -6,7 +6,7 @@
 /*   By: kabasolo <kabasolo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/29 17:24:54 by kabasolo          #+#    #+#             */
-/*   Updated: 2024/06/06 13:40:01 by kabasolo         ###   ########.fr       */
+/*   Updated: 2024/06/13 12:04:49 by kabasolo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,18 @@
 # include <sys/wait.h>
 # include <wait.h>
 
-char	*get_path(char *cmd, char **envp);
-void	daddy(char **argv, char **envp, int files[]);
+typedef struct s_pipex
+{
+	int		argc;
+	char	**argv;
+	char	**envp;
+	int		infile;
+	int		outfile;
+	int		fd[2];
+
+}	t_pipex;
+
+void	daddy(t_pipex data, int i);
+char	*get_path(char *command, char **envp);
 
 #endif //PIPEX_H
